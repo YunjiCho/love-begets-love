@@ -35,8 +35,8 @@ function preload(){
 
 function setup() {
   
-  createCanvas(700, 900);
-
+  canvas = createCanvas(700, 900);
+  canvas.position(windowWidth/2-700/2,windowHeight/2-900/2);
   for (let i = 0; i < num; i++) {
     a[i] = new Ball(random(width), random(height), color(co, co, co));
   }
