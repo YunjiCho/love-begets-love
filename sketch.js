@@ -9,8 +9,7 @@ let numff = 0;
 let speed0 = 0;
 let speed02 = 0;
 let speedt, speedx1, speedy1, speedx2, speedy2, speedx3, speedy3 = 0;
-let s = 60;
-let s2 = 60;
+let s = 10;
 let enterc = 170;
 let s1 = 50;
 let cx1 = 560;
@@ -36,7 +35,8 @@ function preload(){
 function setup() {
   
   canvas = createCanvas(700, 900);
-  canvas.position(windowWidth/2-700/2,windowHeight/2-900/2);
+  //canvas.position(windowWidth/2-700/2,windowHeight/2-900/2);
+
   for (let i = 0; i < num; i++) {
     a[i] = new Ball(random(width), random(height), color(co, co, co));
   }
@@ -85,7 +85,7 @@ function draw() {
   fill(co);
   circle(cx3, cy3, 20);
   circle(cx3 - 10, cy3 - 10, 20);
-
+noStroke();
   fill('#fbfbfb');
   textSize(178);
   text('begets', 100, 304);
@@ -106,22 +106,22 @@ function draw() {
 
   fill(enterc);
 
-  textSize(24);
-  text('Press the ENTER', textx + speed02, 879);
-  speed02 += s2 * 0.2;
-  if (textx + speed02 > width / 2 - 100) {
-    s2 = 0;
-  }
+  // textSize(24);
+  // text('Press the ENTER', textx + speed02, 879);
+  // speed02 += s2 * 0.2;
+  // if (textx + speed02 > width / 2 - 100) {
+  //   s2 = 0;
+  // }
 }
 
-function keyReleased() {
+function mouseReleased() {
   if (s == 0) {
-    speedx1 = random(-3, 0) * v;
+    speedx1 = random(-1, 0) * v;
     speedy1 = 10 * v;
-    speedx2 = random(10, 14) * v;
-    speedy2 = random(-2, 5) * v;
-    speedx3 = random(10, 13) * v;
-    speedy3 = random(5, 15) * v;
+    speedx2 = random(5, 7) * v;
+    speedy2 = random(-1, 3) * v;
+    speedx3 = random(5,7) * v;
+    speedy3 = random(2,6) * v;
 
     let a = new MBall(cx1, cy1, color(wco, 230, 114, g), speedx1, speedy1);
     balls1 = append(balls1, a);
